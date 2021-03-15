@@ -24,7 +24,7 @@ object AskPattern extends App {
   println("\nStep 3: Create DonutInfoActor")
   class DonutInfoActor extends Actor with ActorLogging {
 
-    def receive = {
+    def receive: Receive = {
       case Info(name) if name == "vanilla" =>
         log.info(s"Found valid $name donut")
         sender ! Info(s"Found valid $name donut")
